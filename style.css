@@ -1,0 +1,33 @@
+body {
+    font-family: 'Comic Sans MS', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 32px;
+    color: white;
+    background-color: rgb(255, 191, 0);
+    background-image: url(img/Bg_medievallibrairy1.png);
+    background-size: cover;
+}
+img:hover {
+    outline: 10px solid red;
+}
+h2{
+    text-align: center;
+}
+header, footer {
+    height: 60px;
+    background-color: aqua;
+} 
+
+a {
+    color: white;
+    text-decoration: none;
+    padding: 6px;
+    border-radius: 10px;
+    
+}
+nav a:hover {
+    background-color: lime;
+}
+
+nav {
+    margin-bottom: 40px;
+}
