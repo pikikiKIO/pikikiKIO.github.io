@@ -1,16 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Comic Sans MS', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 32px;
     color: white;
     background-color: rgb(255, 191, 0);
-    background-image: url(img/Bg_medievallibrairy1.png);
     background-size: cover;
 }
+
+.main {
+    background-image: url(img/Bg_medievallibrairy1.png);
+}
+
+.gallery {
+    background-image: url(img/Bg_medievaltreasure2.png);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100vh;
+}
+
+
+
 img:hover {
     outline: 10px solid red;
 }
+
 h2{
     text-align: center;
+    margin-top: 0px;
 }
 header, footer {
     height: 60px;
