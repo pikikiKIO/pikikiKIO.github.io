@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: 'Comic Sans MS', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Impact', Haettenschweiler, 'Impact', sans-serif;
     font-size: 32px;
     color: white;
     background-color: rgb(255, 191, 0);
@@ -13,6 +13,10 @@ body {
 
 .main {
     background-image: url(img/Bg_medievallibrairy1.png);
+}
+
+.image {
+    text-align: center;
 }
 
 .gallery {
@@ -24,7 +28,7 @@ body {
 
 
 
-img:hover {
+.image img:hover {
     outline: 10px solid red;
 }
 
@@ -32,22 +36,121 @@ h2{
     text-align: center;
     margin-top: 0px;
 }
-header, footer {
+footer {
     height: 60px;
     background-color: aqua;
-} 
+}
+
+header {
+    height: 60px;
+    background-color: rgb(255, 0, 0);
+}
 
 a {
     color: white;
     text-decoration: none;
     padding: 6px;
     border-radius: 10px;
-    
+
 }
 nav a:hover {
     background-color: lime;
 }
 
+
+.image {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.image p {
+    width: 300px;
+}
+
 nav {
     margin-bottom: 40px;
+}
+
+main {
+    padding: 0 20px;
+}
+
+/*
+calculator
+*/
+
+.calcul {
+    background-image: url(img/yes.png);
+}
+
+
+.Ltower,
+.Rtower,
+.Nice,
+.No {
+    position: absolute;
+}
+
+.Ltower {
+    left: 50px;
+}
+
+.Rtower {
+    right: 50px;
+}
+
+.Nice {
+    left: 170px;
+    top: 200px;
+    visibility: hidden;
+}
+
+.No {
+    right: 170px;
+    top: 230px;
+    visibility: hidden;
+}
+
+
+.example {
+    margin-top: 150px;
+    font-size: 34px;
+    text-align: center;
+}
+
+.example input {
+    font-size: 34px;
+    text-align: center;
+}
+
+.calcul button {
+    font-size: 34px;
+	background-color:#ff3725;
+	border-radius:15px;
+	border:2px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	padding:7px 16px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ff685d;
+}
+
+.result {
+    margin-top: 80px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.calcul button:hover {
+	background-color:#4b2320;
+}
+
+.otvet {
+    color: rgb(84, 235, 33);
+    visibility: hidden;
 }
