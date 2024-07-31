@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: 'Impact', Haettenschweiler, 'Impact', sans-serif;
+    font-family: 'Exo', Haettenschweiler, 'Corbel', sans-serif;
     font-size: 32px;
     color: white;
     background-color: rgb(255, 191, 0);
@@ -145,6 +145,16 @@ calculator
     display: flex;
     justify-content: center;
 }
+
+.result button {
+    margin: 0px 30px;
+}
+
+#restart {
+    background-color: rgb(255, 255, 0);
+    color: black;
+    display: none;
+} 
 
 .calcul button:hover {
 	background-color:#4b2320;
