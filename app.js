@@ -19,13 +19,14 @@ document.getElementById('y').innerText = y;
 
 function calc() {
     otvet = document.getElementById('result').value;
+
+    if (otvet == '') return;
+
     if (result == otvet) {
-        console.log('right');
         document.getElementById('yes').style.visibility = 'visible';
         document.getElementById('otvet').style.visibility = 'visible';
         document.getElementById('otvet').innerText = 'Харош';
     } else {
-        console.log('bruh');
         document.getElementById('no').style.visibility = 'visible';
         document.getElementById('otvet').style.visibility = 'visible';
         document.getElementById('otvet').innerText = 'Серьёзно, ' + result;
