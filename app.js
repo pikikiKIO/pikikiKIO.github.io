@@ -1,6 +1,6 @@
 x = Math.floor(Math.random() * 9) + 1;
 y = Math.floor(Math.random() * 9) + 1;
-primer = Math.floor(Math.random() * 2) + 1;
+primer = Math.floor(Math.random() * 4) + 1;
 
 switch(primer) {
     case 1:
@@ -10,6 +10,14 @@ switch(primer) {
     case 2:
         result = x - y;
         document.getElementById('operation').innerText = '-';
+        break;
+    case 3:
+        result = x * y;
+        document.getElementById('operation').innerText = '*';
+        break;
+    case 4:
+        result = x / y
+        document.getElementById('operation').innerText = '/';
 }
 
 
@@ -24,10 +32,13 @@ function calc() {
 
     if (result == otvet) {
         document.getElementById('yes').style.visibility = 'visible';
+        document.getElementById('no').style.visibility = 'hidden';
         document.getElementById('otvet').style.visibility = 'visible';
         document.getElementById('otvet').innerText = 'Харош';
+        document.getElementById('otvet').style.color = 'green';
     } else {
         document.getElementById('no').style.visibility = 'visible';
+        document.getElementById('yes').style.visibility = 'hidden';
         document.getElementById('otvet').style.visibility = 'visible';
         document.getElementById('otvet').innerText = 'Серьёзно, ' + result;
         document.getElementById('otvet').style.color = 'red';
