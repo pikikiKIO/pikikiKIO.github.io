@@ -1,29 +1,103 @@
-x = Math.floor(Math.random() * 9) + 1;
-y = Math.floor(Math.random() * 9) + 1;
-primer = Math.floor(Math.random() * 4) + 1;
+level = 1;
+right = 0;
 
-switch(primer) {
-    case 1:
-        result = x + y;
-        document.getElementById('operation').innerText = '+';
+function game(level) {
+    switch(level) {
+        case 1:
+            minValue = 1;
+            maxValue = 9;
         break;
-    case 2:
-        result = x - y;
-        document.getElementById('operation').innerText = '-';
-        break;
-    case 3:
-        result = x * y;
-        document.getElementById('operation').innerText = '*';
-        break;
-    case 4:
-        result = x / y
-        document.getElementById('operation').innerText = '/';
+        case 2:
+            minValue = 1;
+            maxValue = 9;
+    }
+  
+
+    document.getElementById('yes').style.visibility = 'hidden';
+    document.getElementById('no').style.visibility = 'hidden';
+    document.getElementById('restart').style.display = 'none';
+    document.getElementById('otvet').innerText = '';
+    document.getElementById('result').value = '';
+
+    document.getElementById('menu').style.display = 'none';
+    x = Math.floor(Math.random() * maxValue) + minValue;
+    y = Math.floor(Math.random() * maxValue) + minValue;
+    z = Math.floor(Math.random() * maxValue) + minValue;
+    primer = Math.floor(Math.random() * 4) + 1;
+    switch(true) {
+        case primer == 1 && level== 1:
+            result = x + y;
+            document.getElementById('operation').innerText = '+';
+            document.getElementById('x').innerText = x;
+            document.getElementById('y').innerText = y;
+            break;
+
+        case primer == 1 && level== 2:
+            result = x + y + z;
+            document.getElementById('operation').innerText = '+';
+            document.getElementById('operation2').innerText = '+';
+            document.getElementById('z').innerText = z;
+            document.getElementById('x').innerText = x;
+            document.getElementById('y').innerText = y;
+            break;
+
+        case primer == 2 && level == 1:
+            result = x - y;
+            document.getElementById('operation').innerText = '-';
+            document.getElementById('x').innerText = x;
+            document.getElementById('y').innerText = y;
+            break;
+
+        case primer == 2 && level == 2:
+            result = x - y - z;
+            document.getElementById('operation').innerText = '-';
+            document.getElementById('operation2').innerText = '-';
+            document.getElementById('z').innerText = z;
+            document.getElementById('x').innerText = x;
+            document.getElementById('y').innerText = y;
+            break;
+
+        case primer == 3 && level == 1:
+            result = x * y;
+            document.getElementById('operation').innerText = '*';
+            document.getElementById('x').innerText = x;
+            document.getElementById('y').innerText = y;
+            document.getElementById('x').innerText = x;
+            document.getElementById('y').innerText = y;
+            break;
+
+        case primer == 3 && level == 2:
+            result = x * y + z;
+            document.getElementById('operation').innerText = '*';
+            document.getElementById('operation2').innerText = '+';
+            document.getElementById('z').innerText = z;
+            document.getElementById('x').innerText = x;
+            document.getElementById('y').innerText = y;
+            break;
+
+        case primer == 4:
+            result = Math.floor(Math.random() * Math.floor(maxValue/2+1)) + minValue;
+            x = result * y;
+            document.getElementById('operation').innerText = '/';
+            document.getElementById('x').innerText = x;
+            document.getElementById('y').innerText = y;
+
+        case primer == 4 && level == 2:
+            result = Math.floor(Math.random() * Math.floor(maxValue/2+1)) + minValue;
+            y = x * (result + z)
+            document.getElementById('operation').innerText = '/';
+            document.getElementById('operation2').innerText = '-';
+            document.getElementById('z').innerText = z;
+            document.getElementById('y').innerText = x;
+            document.getElementById('x').innerText = y;
+            break;
+    }
+
+    
+
+
 }
 
-
-
-document.getElementById('x').innerText = x;
-document.getElementById('y').innerText = y;
 
 function calc() {
     otvet = document.getElementById('result').value;
@@ -36,6 +110,8 @@ function calc() {
         document.getElementById('otvet').style.visibility = 'visible';
         document.getElementById('otvet').innerText = 'Харош';
         document.getElementById('otvet').style.color = 'green';
+        right++;
+        document.getElementById('right').innerText = right;
     } else {
         document.getElementById('no').style.visibility = 'visible';
         document.getElementById('yes').style.visibility = 'hidden';
