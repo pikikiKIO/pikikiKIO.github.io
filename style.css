@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: 'Exo', Haettenschweiler, 'Corbel', sans-serif;
+    font-family: 'Bachnschrift Light', Haettenschweiler, 'Corbel', sans-serif;
     font-size: 32px;
     color: white;
     background-color: rgb(255, 191, 0);
@@ -198,6 +198,11 @@ h2 {
 
 #hard:hover {
     background-color: #d61919;
+    cursor: pointer;
+}
+
+#lunatic:hover {
+    background-color: #0d0ad0;
     cursor: pointer;
 }
 

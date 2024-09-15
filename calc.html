@@ -27,11 +27,14 @@
         <h2>
             Выберите Сложность
         </h2>
-        <p id="easy" onclick="game(1)">
+        <p id="easy" onclick="level=1;game()">
             Обычный
         </p>
-        <p id="hard" onclick="game(2)">
+        <p id="hard" onclick="level=2;game()">
             Сложный
+        </p>
+        <p id="lunatic" onclick="level=3;game()">
+            Экстриальный
         </p>
     </div>
 
@@ -48,7 +51,7 @@
     </div>
 
     <div class="result">
-        <button onclick="calc()">Проверить</button>
+        <button id="check" onclick="calc()">Проверить</button>
         <button id="restart" onclick="game(level)">Дальше</button>
     </div>
 
