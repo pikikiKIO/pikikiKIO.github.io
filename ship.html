@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #ship {
+            position: absolute;
+            top: 0;
+            left: 200px;
+            width: 180px;
+            height: 265px;
+            background-image: url(img/ship.png);
+            background-size: cover;
+        }
+
+        #fire1 {
+            position: absolute;
+            top: 165px;
+            left: 0;
+        }
+
+        #fire2 {
+            position: absolute;
+            top: 165px;
+            left: 129px;
+        }
+
+        #bg {
+            position: absolute;
+            top: 0;
+        }
+
+        #ground {
+            position: absolute;
+            top: 650px;
+
+        }
+
+        #up {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background-image: url(img/+.png);
+            background-size: cover;
+            z-index: 1;
+        }
+
+        #up:active {
+            background-image: url(img/+_B.png);
+        }
+
+        #down:active {
+            background-image: url(img/-_B.png);
+        }
+
+        #down {
+            position: absolute;
+            top: 80px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background-image: url(img/-.png);
+            background-size: cover;
+            z-index: 1;
+        }
+
+        #heigh {
+            position: absolute;
+            top: 5px;
+            left: 80px;
+            font-family: Constantia;
+            font-size: 25px;
+            z-index: 2;
+            color: white;
+        }
+
+        #speed {
+            position: absolute;
+            top: 65px;
+            left: 80px;
+            font-family: Constantia;
+            font-size: 25px;
+            z-index: 2;
+            color: white;
+        }
+
+        #fuel {
+            position: absolute;
+            top: 125px;
+            left: 80px;
+            font-family: Constantia;
+            font-size: 25px;
+            z-index: 2;
+            color: white;
+        }
+    nav {
+        position: absolute;
+        z-index: 5;
+        left: 250px;
+    }
+    </style>
+    <script>
+
+        x = 100;
+        V = 0;
+        j = 1.7;
+        E = 1.7;
+        F = 10;
+        Timer = setInterval(function() {
+            if(F <= 0) E = 0;
+            V = V + (j - E) / 100; 
+            x = x + V;
+            F = F - E / 100;
+            ship = document.getElementById("ship");
+            ship.style.top = x + "px";
+
+        element = document.getElementById("fire1");
+	dx=0;
+    element.style.top = 110+E*10+"px";
+	element.style['webkitTransform']="scale(1,"+(E+dx/3)/5+")";
+	element.style['msTransform']="scale(1,"+(E+dx/3)/2+")";
+	element.style['OTransform']="scale(1,"+(E+dx/3)/2+")";
+	element.style['MozTransform']="scale(1,"+(E+dx/3)/2+")";
+	element.style['Transform']="scale(1,"+(E+dx/3)/2+")";
+
+    element2 = document.getElementById("fire2");
+	dx=0;
+    element2.style.top = 110+E*10+"px";
+	element2.style['webkitTransform']="scale(1,"+(E+dx/3)/5+")";
+	element2.style['msTransform']="scale(1,"+(E+dx/3)/2+")";
+	element2.style['OTransform']="scale(1,"+(E+dx/3)/2+")";
+	element2.style['MozTransform']="scale(1,"+(E+dx/3)/2+")";
+	element2.style['Transform']="scale(1,"+(E+dx/3)/2+")";
+            
+            // Вывод показаний приборов
+            document.getElementById("heigh").innerText="Высота: " + Math.round(600 - x) + ' m';
+            document.getElementById("speed").innerText="Скорость: " + Math.round(V* 3.6 * 10) / 10 + ' km/h';
+            document.getElementById("fuel").innerText="Топливо: " + Math.round(F) + ' л';
+            if (x > 400) clearInterval(Timer);
+            
+    
+    
+        }, 20);
+
+   
+    </script>        
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="gallery.html">Галерея</a>
+        <a href="calc.html">Примеры</a>
+        <a href="ship.html"><b>Посадка на Уран</b></a>
+    </nav>
+
+    <div id="up" onclick="E++"></div>
+    <div id="down" onclick="E--"></div>
+    <img id="bg" src="img/stars.png" width="100%">
+    <img id="ground" src="img/ground.png" width="100%">
+    <div id="ship" >
+        <img id="fire1" src="img/fire.gif" width="50">
+        <img id="fire2" src="img/fire.gif" width="50">
+    </div>
+
+    <p id="heigh">Высота: 0</p>
+    <p id="speed">Скорость: 0</p>
+    <p id="fuel">Топливо: F</p>
+</body>
+</html>
