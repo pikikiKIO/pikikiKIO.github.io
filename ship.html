@@ -138,7 +138,7 @@
 	element2.style['Transform']="scale(1,"+(E+dx/3)/2+")";
             
             // Вывод показаний приборов
-            document.getElementById("heigh").innerText="Высота: " + Math.round(600 - x) + ' m';
+            document.getElementById("heigh").innerText="Высота: " + Math.round(400 - x) + ' m';
             document.getElementById("speed").innerText="Скорость: " + Math.round(V* 3.6 * 10) / 10 + ' km/h';
             document.getElementById("fuel").innerText="Топливо: " + Math.round(F) + ' л';
             if (x > 400) clearInterval(Timer);
