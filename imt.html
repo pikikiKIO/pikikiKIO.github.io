@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+<body class="imt">
+
+    <header>
+        PicRain(C)2024
+    </header>  
+
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="gallery.html">Галерея</a>
+        <a href="calc.html">Примеры</a>
+        <a href="ship.html">Посадка на Уран</a>
+        <a href="imt.html"><b>ИМТ</b></a>
+    </nav>
+
+    <h2>
+        Рассчитай свой индекс массы тела
+    </h2>
+    <p id="imtMessage"></p>
+    <div class="example">        
+        <input type="text" id="m" placeholder="Ваш вес в кг">
+        <input type="text" id="h" placeholder="Ваш рост в см">
+        <br>
+        <br>
+        <button id="imt">
+            Рассчитать
+        </button>
+    </div>
+
+    <script>
+        document.querySelector('#imt').onclick=function(){
+            m = document.getElementById('m').value;
+            h = document.getElementById('h').value/100;
+            imt = m / (h*h); 
+            console.log(m);
+            console.log(h);
+            console.log(imt);
+            if (imt <= 16) message = 'Выраженный дефицит массы';
+            if (imt > 16 && imt <= 18.5) message = 'Недостаточная масса тела';
+            if (imt > 18.5 && imt < 25) message = 'Норма';
+            if (imt >= 25 && imt < 40) message = 'Избытачный вес';
+            if (imt >= 40) message = 'Ожирение';
+            document.getElementById('imtMessge').innerText = 'Ваш ИМТ ' + Math.round(imt) + ' : ' + message;
+        }
+    </script>
+
+<footer>
+    PicRain(C)2024
+</footer>  
+
+</body>
+</html>
